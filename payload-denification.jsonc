@@ -1,0 +1,109 @@
+// Device report 
+{
+    "date": "2020-12-21 10:00:00",
+    "Status": "",
+    "System": {
+        "SiteName": "",
+        "Block": "",
+        "String": "",
+        "Unit": "",
+        "Address": {
+            "Address16": "",
+            "Address24": "",
+            "Address32": "",
+            "Address40": ""
+        },
+        "Config": {
+            "Enable": false,
+            "OperationMode": "",
+            "RefreshDuration": "",
+            "VoltageLevel": "",
+            "DeviceType": "",
+            "CableType": "",
+            "Capacity": ""
+        },
+        "Alarm": {
+            "R_Upper": "",
+            "V_Upper": "",
+            "V_Lower": "",
+            "E_Upper": "",
+            "E_Lower": "",
+            "T_Upper": "",
+            "T_Lower": "",
+            "Error": ""
+        },
+        "Communication": {
+            "InternetAvailable": "", //"Available" : "Unavailable"
+            "WiFiSignal": "",
+            "SSID": "",
+            "MobileSignal": ""
+        }
+    },
+    "Units": [
+        {
+            "Name": "",
+            "TotalBlock": "",
+            "TotalString": "",
+            "Address": "",
+            "BlkCapacity": "",
+            "RefreshDuration": "",
+            "Config": {
+                "Enable": "",
+                "OperationMode": "",
+                "RefreshDuration": "",
+                "VoltageLevel": "",
+                "DeviceType": "",
+                "CableType": "",
+                "Capacity": ""
+            },
+            "Status": {
+                "TotalActiveBlock": "",
+                "TotalAlarmBlock": "",
+                "ReferenceR": "",
+                "Events": ""
+            }
+        }
+    ],
+    "Blocks": [
+        {
+            "Block": "",
+            "String": "",
+            "Unit": "",
+            "V0": "",
+            "V1": "",
+            "V2": "",
+            "E": "",
+            "R": "",
+            "T": "",
+            "Config": {
+                "Enable": "",
+                "OperationMode": "",
+                "RefreshDuration": "",
+                "VoltageLevel": "",
+                "DeviceType": "",
+                "CableType": "",
+                "Capacity ": ""
+            },
+            "Status":{
+                "Presented": "",
+                "OperationMode": "",
+                "Alarm": "",
+                "MissingPacket": "",
+                "NbTransaction": "",
+                "TotalDischargeCycle": "",
+                "TotalDischargeSecond": "",
+                "ExpectedLifeTimeRest": ""
+            },
+            "Alarm":{
+                "R_Upper": "",
+                "V_Upper": "",
+                "V_Lower": "",
+                "E_Upper": "",
+                "E_Lower": "",
+                "T_Upper": "",
+                "T_Lower": "",
+                "Error": ""
+            }
+        }
+    ]
+}

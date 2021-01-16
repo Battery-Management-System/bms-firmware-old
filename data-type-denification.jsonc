@@ -1,0 +1,332 @@
+/*
+** BMS payload definition 
+*/
+// AblockData
+[
+    {
+        "timeTicks": 100.0, // long
+        "data": "test"
+    },
+    // CSVType, CSVDataType
+    {
+        "Block": "01",
+        "V0": "",
+        "E": "",
+        "R": "",
+        "T": ""
+    },
+    // CSVHeaderType
+    {
+        "Description": "",
+        "Value": ""
+    },
+    // JobDataType
+    {
+        "JobCode": 0,
+        "NbTrial": 0,
+        "MaxNbTrial": 0,
+        "TrialDuration": 0
+    },
+    // ConfigDataType
+    {
+        "enable": "", // byte
+        "operationMode": "", // byte
+        "refreshDuration": "", // byte
+        "voltageLevel": "", // byte
+        "deviceType": "", // byte
+        "cableType": "", // byte
+        "blkCapacity": "", // byte
+        "config": "", // ushort
+        "Config": "" // ushort
+    },
+    // StatusDataType
+    {
+        "presented": "", //byte
+        "operationMode": "", //byte
+        "alarm": "", //byte
+        "missingPacket": "", //byte
+        "nbTransaction": "", //byte
+        "status": "", //ushort
+        "Status": "" //ushort
+    },
+    // PROCESSFLAGSTYPE
+    {
+        "startupFinished": false, //flag to indicate system is starting
+        "shutdownRequest": false, //flag to indicate shutdown request    
+        "updateDataAvailable": false, //flag to indicate data received is measurement data 
+        "settingDataAvailable": false, //flag to indicate data received is setting data 
+        "calibDataAvailable": false, //flag to indicate data received is calibration data 
+        "enumDataAvailable": false, //flag to indicate data received is enumeration data 
+        "transferDataError": false, //flag to indicate transfer data error
+        "settingDataModified": false, //flag to indicate setting data modified
+        "settingDataError": false, //flag to indicate setting data error
+        "settingDataSaveRequired": false, //flag to indicate setting data need to be saved
+        "settingsWindowRefreshRequired": false, //flag to indicate setting window must be refreshed
+        "alarmsWindowRefreshRequired": false, //flag to indicate alarm window must be refreshed
+        "eventsWindowRefreshRequired": false, //flag to indicate event window must be refreshed
+        "graphWindowRefreshRequired": false, //flag to indicate graph window must be refreshed
+        "monitorWindowRefreshRequired": false, //flag to indicate monitor window must be refreshed
+        "dataDispatchingRequired": false, //flag to indicate data disptaching to database and other services required after finishing refresh data from PIC
+        "dataProcessingRequired": false, //flag to indicate data processing required after dispatching
+        "alarmProcessingRequired": false, //flag to indicate alarm analysing required after processing data
+        "pivotUpdateRequired": false, //flag to indicate update pivot windows required after finishing data processing
+        "TCPProcessingRequired": false, //flag to indicate TCP service required
+        "uart3GProcessingRequired": false, //flag to indicate 3G service required
+        "configDataAvailable": false, //flag to indicate config data loaded 
+        "submitToSendEmail": false, //flag to indicate email should be sent 
+        "submitToReset": false, //flag to indicate reset required 
+        "MasterInProgress": false, //flag to indicate Master refresh period
+        "LoraInProgress": false, //flag to indicate Lora refresh period
+        "RFInProgress": false, //flag to indicate RF refresh period
+        "forceToSendEmail": false, //flag to indicate enmail forced to send by user 
+        "refreshDurationChanged": false, //flag to indicate system refresh period changed
+        "sendEmailRequestOnNewDay": false, //flag to indicate report email must be sent on new day 
+        "sendEmailSuccessfully": false, //flag to indicate report email was sent successfully 
+        "processInProgress": false //flag to indicate main process after receiving SPI data in progress 
+    },
+    // COMMFLAGSTYPE
+    {
+        "MobileNetworkAvailable": false, //flag to indicate 3G module ready & connected to Internet
+        "TCPAvailable": false, //flag to indicate Wifi or Ethernet connected to Internet    
+        "LORAAvailable": false, //flag to indicate LORA module available & ready for transfering data 
+        "SPIAvailable": false //flag to indicate SPI master ready  
+    },
+    // ExtendedDataType
+    {
+        "V0Max": 1.0, // BMK:Max floating voltage/SMK:Max string voltage/LMK:Max positive voltage 
+        "V0Min": 1.0, // BMK:Min floating voltage/SMK:Min string voltage/LMK:Min positive voltage  
+        "EMax": 1.0, // BMK:Max internal voltage/SMK:Max calculated string voltage/LMK:Max negative voltage 
+        "EMin": 1.0, // BMK:Min internal voltage/SMK:Min calculated string voltage/LMK:Min negative voltage  
+        "RMax": 1.0, // BMK:Max R/SMK:Max R in string/LMK:Min positive R 
+        "RMin": 1.0, // BMK:Min R/SMK:Min R in string/LMK:Min negative R 
+        "RAvr": 1.0, // BMK:Average R/SMK:Average R in string/LMK:Average min R 
+        "RMode": 1.0, // BMK:R value that occurs most often//SMK:R value that occurs most often in string/LMK:R value that occurs most often. 
+        "RDeviation": 1.0, // BMK/SMK/LMK: Standard deviation of R 
+        "TMax": 1.0, // BMK/SMK/LMK: Max temperature 
+        "SOCMin": 1.0, // BMK:Min SOC
+        "TotalDischargeSecond": 1, // BMK:Total discharge time in second   
+        "TotalDischargeCycle": 1, // BMK:Total discharge cycle   
+        "ExpectedLifeTimeRest": 1.0 // BMK:Rest of Life time expected            
+    },
+    // DisplayDataType
+    {
+        "timeTicks": 1.0, // Time stamp  
+        "V0": 1.0, // Block floating voltage measured
+        "V1": 1.0, // Block 1st step voltage measured
+        "V2": 1.0, // Block 2nd voltage measured
+        "E": 1.0, // Block internal voltage calculated
+        "R": 1.0, // Block impedance calculated
+        "T": 1.0, // Block temperature measured
+        "SOC": 1.0 // Block SOC derived
+    },
+    // LeakageDataType
+    {
+        "timeTicks": 1.0, // Time stamp  
+        "Vp": 1.0, // Positive branch voltage measured
+        "Vn": 1.0, // Negative branch voltage measured
+        "Rfp": 1.0, // Positive fault resistance calculated
+        "Rfn": 1.0, // Negative fault resistance calculated
+        "If1": 1.0, // First differential current measured
+        "If2": 1.0, // Second differential current measured
+        "H": 1.0 // Humidity per centage
+    },
+    // AlarmDataType
+    {
+        "FromBegining": false, // Accumulate from begining 
+        "FromLastHour": false, // Accumulate from last hour 
+        "Reported": false, // Status reported or not 
+        "R_Upper": false, // Status of  over R upper threshold 
+        "V_Upper": false, // Status of over V upper threshold 
+        "V_Lower": false, // Status of lover V lover threshold 
+        "E_Upper": false, // Status of over E upper threshold 
+        "E_Lower": false, // Status of lover E lover threshold 
+        "T_Upper": false, // Status of over T upper threshold 
+        "T_Lower": false, // Status of lover T lover threshold 
+        "NB_R_Upper": 1, // Number of over R upper threshold 
+        "NB_V_Upper": 1, // Number of over V upper threshold 
+        "NB_V_Lower": 1, // Number of lover V lover threshold 
+        "NB_E_Upper": 1, // Number of over E upper threshold 
+        "NB_E_Lower": 1, // Number of lover E lover threshold 
+        "NB_T_Upper": 1, // Number of over T upper threshold 
+        "NB_T_Lower": 1, // Number of lover T lover threshold 
+        "NB_Missed": 1, // Number of missing refresh cycle 
+        "NB_Alert": 1 // Number of sending alert 
+    },
+    //MeasurementDataType
+    {
+        "V0": 1, // Block floating voltage measured
+        "V1": 1, // Block 1st step voltage measured
+        "V2": 1, // Block 2nd step voltage measured
+        "T": 1, // Block temperature measured
+        "sV1": 1, // SW1 drop voltage 
+        "sV2": 1, // SW2 drop voltage
+        "E": 1,
+        "STATUS_STRUCT": {} //StatusDataType above
+    },
+    //MeasurementDataVType
+    {
+        "V0": 1,
+        "V1": 1,
+        "V2": 1,
+        "V3": 1,
+        "V4": 1,
+        "V5": 1,
+        "V6": 1,
+        "STATUS_STRUCT": {} //StatusDataType above
+    },
+    // VarianceDataType
+    {
+        "time": 1, // moment of variance
+        "isDischarging": false, // type of variance
+        "isFloating": false, // type of variance
+        "isBoosting": false, // type of variance
+        "isEndOfDischarge": false, // type of variance
+        "isDecreasing": false, // gradient of voltage - decreasing 
+        "isIncreasing": false, // gradient of voltage - increasing
+        "V": 1 // voltage at variance
+    },
+    // UnitDataType
+    {
+        "NAME": "", // string  Unit alias name
+        "TOTAL_BLOCK": "", // byte Total Block
+        "TOTAL_STRING": "", // byte Total String
+        "TOTAL_LEAKAGE": "", // byte Total Leakage kit
+        "TOTAL_COMM": "", // byte Total Communication kit
+        "ADDRESS": "", // byte LSB Address
+        "BLK_CAPACITY": "", // byte Blk capacity
+        "REFRESH_DURATION": "", // byte Refreshing duration
+        "NB_PAGE": "", // byte Total page refreshed
+        "CURRENT_PAGE": "", // byte Current refreshed page
+        "REPEAD_PAGE": "", // byte Repeated page
+        "RECORD_INDEX": 1, //  First record index
+        "ADJUST_INDEX": "", // byte Adjusting index
+        "CONFIG_STRUCT": {}, // byte Config word    
+        "STATUS_STRUCT": {} // byte  
+    },
+    // SettingDataType
+    {
+        "BLOCK": "", // byte  Block enum
+        "STRING": "", // byte  String enum
+        "UNIT": "", // byte  Unit enum
+        "ADDRESS16": 1, //   First two LSB Physical address
+        "ADDRESS24": "", // byte  Third byte Physical address
+        "ADDRESS32": "", // byte  Fourth byte Physical address
+        "ADDRESS40": "", // byte  Fith byte Physical address
+        "R1": 1, //   1st step resistor
+        "R2": 1, //   2nd step resistor    
+        "VSCALE": 1, //   Voltage scale
+        "CONFIG_STRUCT": {} // ConfigDataType above   Config word    
+    },
+    // MeasurementDataPackage
+    {
+        "timeTicks": 1.0, //long
+        "status": "", // byte
+        "DisplayDataType": [] // displayData = new List<DisplayDataType>();
+    },
+    // SMSConfigType
+    {
+        "number": "phone number",
+        "generalAlarm": false,
+        "serviceAlarm": false,
+        "criticalAlarm": false,
+        "sendReport": false,
+        "acceptRequire": false
+    },
+    // EmailConfigType
+    {
+        "address": "", // Email address
+        "generalAlarm": false,
+        "serviceAlarm": false,
+        "criticalAlarm": false,
+        "sendReport": false,
+        "acceptRequire": false
+    },
+    // SMTPConfigType
+    {
+        "server": "",
+        "user": "",
+        "password": "",
+        "port": 1000,
+        "connect": "" // byte
+    },
+    // CommSettingType
+    {
+        "Mobile_APN": "",
+        "Mobile_Name": "",
+        "Mobile_Password": "",
+        "TCP_IP3": "",
+        "TCP_IP2": "",
+        "TCP_IP1": "",
+        "TCP_IP0": "",
+        "TCP_Port": 1234,
+        "RS485_Port": 1,
+        "RS485_Baudrate": 1,
+        "SMSConfigType": [], //SMSConfigType
+        "EmailConfigType": [], //EmailConfigType
+        "SMTPConfig": "",
+        "WIFI_SSID": "",
+        "WIFI_Password": ""
+    },
+    // AlarmSettingType
+    {
+        "R_Upper": "", //byte
+        "V_Upper": "", //byte
+        "V_Lower": "", //byte
+        "E_Upper": "", //byte
+        "E_Lower": "", //byte
+        "T_Upper": "", //byte
+        "T_Lower": "" //byte    
+    },
+    // AxisDataType
+    {
+        "max": 1.0, // Axis max value
+        "min": 1.0, // Axis min value
+        "interval": 1.0, // Axis interval 
+        "nbXItem": 1, // Number of X items 
+        "XLenght": 1 // Lenght o X axis 
+    },
+    // GraphRrefreshType
+    {
+        "V0": false, // V0 graph refreshed
+        "E": false, // E graph refreshed
+        "VE": false, // VE graph refreshed
+        "R": false, // R graph refreshed
+        "T": false, // T graph refreshed
+        "SOC": false // SOC graph refreshed
+    },
+    // BlockTagType
+    {
+        "unit": 1,
+        "str": 1,
+        "blk": 1,
+        "record": 1
+    },
+    // DataPoint
+    {
+        "Value1": 1.0,
+        "Value2": 1.0,
+        "Value3": 1.0,
+        "Value4": 1.0,
+        "DT": ""
+    },
+    // receivedEventArgs
+    {
+        "Total": 1,
+        "measurementData": [], //MeasurementDataType
+        "displayData;  ": [] //DisplayDataType
+    },
+    // configEventArgs
+    {
+        "settingData": [] //SettingDataType
+    },
+    // savingDataType
+    {
+        "saveData": [], //MeasurementDataPackage
+        "activeList": [
+            1,
+            2,
+            3
+        ], //
+        "alarmList": [] //AlarmDataType
+    }
+]
